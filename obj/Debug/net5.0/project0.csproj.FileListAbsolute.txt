@@ -1,0 +1,16 @@
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.csprojAssemblyReference.cache
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.AssemblyInfoInputs.cache
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.AssemblyInfo.cs
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.csproj.CoreCompileInputs.cache
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.exe
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.deps.json
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.runtimeconfig.json
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.runtimeconfig.dev.json
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.dll
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\ref\project0.dll
+C:\Users\acuff\Desktop\training_sessions\project0\bin\Debug\net5.0\project0.pdb
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.dll
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\ref\project0.dll
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.pdb
+C:\Users\acuff\Desktop\training_sessions\project0\obj\Debug\net5.0\project0.genruntimeconfig.cache
