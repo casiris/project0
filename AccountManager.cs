@@ -62,6 +62,7 @@ namespace project0
             }
             catch (SqlException e)
             {
+                Console.WriteLine(e.Message);
                 return account;
             }
             finally
