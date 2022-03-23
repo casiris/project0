@@ -170,13 +170,5 @@ namespace project0
             }
             Console.WriteLine("Account closed");
         }
-
-        public void Transfer (double amount, int accTransferFrom, int accTransferTo)
-        {
-            // user will need to enter both account numbers, which makes sense irl since you'd need to know the accounts to transfer from/to
-
-            // the problem is, from where do i add/subtract the amount? in the database it makes sense, but i'd also need to update the account object
-            // and from within the class, how do i know which object is which? 
-        }
     }
 }
