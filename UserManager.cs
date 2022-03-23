@@ -35,7 +35,7 @@ namespace project0
             return userID;
         }
 
-        public List<AccountManager> GetAllAccounts(int uID)
+        public List<AccountManager> GetAllAccountsByUserID(int uID)
         {
             List<AccountManager> accounts = new List<AccountManager>();
             SqlCommand cmdAllAccounts = new SqlCommand("SELECT * FROM Accounts WHERE userID = @userID", connection);
@@ -55,6 +55,78 @@ namespace project0
                         accountNumber = Convert.ToInt32(reader[0]),
                         accountType = Convert.ToString(reader[1]),
                         accountBalance = Convert.ToDouble(reader[2])
+                    });
+                }
+            }
+            catch (SqlException e)
+            {
+                return accounts;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return accounts;
+        }
+
+        // get all accounts, order by balance, group by type
+        public List<AccountManager> OrderBy(int uID)
+        {
+            List<AccountManager> accounts = new List<AccountManager>();
+            SqlCommand cmdAllAccounts = new SqlCommand("SELECT * FROM Accounts WHERE userID = @userID ORDER BY accountBalance DESC", connection);
+            cmdAllAccounts.Parameters.AddWithValue("@userID", uID);
+
+            SqlDataReader reader;
+
+            try
+            {
+                connection.Open();
+                reader = cmdAllAccounts.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    accounts.Add(new AccountManager()
+                    {
+                        accountNumber = Convert.ToInt32(reader[0]),
+                        accountType = Convert.ToString(reader[1]),
+                        accountBalance = Convert.ToDouble(reader[2])
+                    });
+                }
+            }
+            catch (SqlException e)
+            {
+                return accounts;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return accounts;
+        }
+
+        // sum all of user's accounts by type, group by type
+        public List<GroupByStorage> GroupBy(int uID)
+        {
+            List<GroupByStorage> accounts = new List<GroupByStorage>();
+            SqlCommand cmdAllAccounts = new SqlCommand("SELECT userID, accountTYPE, SUM(accountBalance) FROM Accounts GROUP BY accountTYPE, userID", connection);
+
+            SqlDataReader reader;
+
+            try
+            {
+                connection.Open();
+                reader = cmdAllAccounts.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    accounts.Add(new GroupByStorage()
+                    {
+                        userID = Convert.ToInt32(reader[0]),
+                        accountType = Convert.ToString(reader[1]),
+                        //accountCount = Convert.ToInt32(reader[2]),        // if I have AS 'Total Balance' in the command, it doesn't show up in the results in c# for some reason
+                        totalBalance = Convert.ToInt32(reader[2])
                     });
                 }
             }
