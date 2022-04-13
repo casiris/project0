@@ -24,7 +24,7 @@ namespace project0
                 reader.Read();
                 userID = Convert.ToInt32(reader[0]);
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 Console.WriteLine("Invalid login creditials, please try again");
                 Console.WriteLine(e.Message);
@@ -110,7 +110,7 @@ namespace project0
         }
 
         // sum all of user's accounts by type, group by type
-        public List<GroupByStorage> GroupBy(int uID)
+        public List<GroupByStorage> GroupBy()
         {
             List<GroupByStorage> accounts = new List<GroupByStorage>();
             SqlCommand cmdAllAccounts = new SqlCommand("SELECT userID, accountTYPE, SUM(accountBalance) FROM Accounts GROUP BY accountTYPE, userID", connection);

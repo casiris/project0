@@ -45,7 +45,7 @@ namespace project0
                     Console.WriteLine("Account number: {0}\nAccount type: {1}\nAccount balance: {2}\n", account.accountNumber, account.accountType, account.accountBalance);
                 }
 
-                Console.WriteLine("What would you like to do?\n1. Open a new account\n2. Withdraw from your account\n3. Deposit to your account\n4. Close account\n5. Order accounts by balance\n6. Group by\n7. Exit");
+                Console.WriteLine("What would you like to do?\n1. Open a new account\n2. Withdraw from your account\n3. Deposit to your account\n4. Close account\n5. Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
@@ -89,7 +89,7 @@ namespace project0
                         accManager = accManager.FindAccountByID(accountNum);
                         accManager.CloseAccount(accountNum);
                         break;
-                    case 5:
+                    /* case 5:
                         Console.Clear();
                         // order by
                         // return all of user's accounts, order by balance
@@ -100,23 +100,23 @@ namespace project0
                         {
                             Console.WriteLine("Account number: {0}\nAccount type: {1}\nAccount balance: {2}\n", account.accountNumber, account.accountType, account.accountBalance);
                         }
-                        break;
-                    case 6:
+                        break; */
+                    /* case 5:
                         // sum all of user's accounts by type, group by type
                         // doesn't work
-                        Console.Clear();
-                        List<GroupByStorage> group = userManager.GroupBy(currentUserID);
+                        //Console.Clear();
+                        List<GroupByStorage> group = userManager.GroupBy();
 
                         foreach(var g in group)
                         {
-                            Console.WriteLine("User ID: {0}\nAccount type: {1}\nNumber of accounts: {2}\nTotal balance: {3}\n", g.userID, g.accountType, g.accountCount, g.totalBalance);
+                            Console.WriteLine("User ID: {0}\nAccount type: {1}\nTotal balance: {2}\n", g.userID, g.accountType, g.totalBalance);
                         }
-                        break;
+                        break; */
                     default:
                         break;
                 }
 
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("\nDo you have another transaction? (y/n)");
                 string response = Console.ReadLine();
 
